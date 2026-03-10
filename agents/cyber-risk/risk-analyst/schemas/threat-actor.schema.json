@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://cyber-risk.local/schemas/threat-actor.schema.json",
+  "title": "Threat Actor Inference",
+  "type": "object",
+  "required": [
+    "actors"
+  ],
+  "properties": {
+    "actors": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "actor_id",
+          "actor_type",
+          "confidence",
+          "rationale"
+        ],
+        "properties": {
+          "actor_id": {
+            "type": "string"
+          },
+          "actor_type": {
+            "type": "string",
+            "enum": [
+              "Ransomware",
+              "BEC",
+              "Opportunistic",
+              "Insider",
+              "Hacktivist",
+              "StateAligned"
+            ]
+          },
+          "confidence": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "evidence_tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

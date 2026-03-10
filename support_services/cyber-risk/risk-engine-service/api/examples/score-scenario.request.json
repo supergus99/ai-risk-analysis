@@ -1,0 +1,35 @@
+{
+  "exposure": {
+    "factors": {
+      "external_attack_surface": 72,
+      "identity_weakness": 68,
+      "endpoint_weakness": 40,
+      "cloud_misconfig_risk": 35,
+      "vendor_dependency_risk": 50,
+      "user_susceptibility": 60,
+      "detection_gaps": 30,
+      "recovery_weakness": 55
+    }
+  },
+  "probability": {
+    "base_sector_rate": 0.12,
+    "actor_multiplier": 1.3,
+    "exposure_multiplier": 1.2,
+    "control_adjustment": 1.15,
+    "trend_adjustment": 1.05
+  },
+  "impact": {
+    "response_cost": 180000,
+    "recovery_cost": 450000,
+    "business_interruption_cost": 900000,
+    "regulatory_legal_cost": 150000,
+    "customer_remediation_cost": 70000,
+    "reputation_drag_cost": 250000
+  },
+  "scoring_matrix": {
+    "threat_relevance": 4,
+    "exploitability": 4,
+    "resilience_weakness": 3,
+    "impact_severity": 4
+  }
+}

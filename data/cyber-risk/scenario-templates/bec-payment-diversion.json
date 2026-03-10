@@ -1,0 +1,32 @@
+{
+  "scenario_id": "tmpl-bec-payment-diversion",
+  "title": "Business email compromise leads to payment diversion",
+  "scenario_family": "BEC",
+  "actor_type": "BEC",
+  "attack_vector": "Phishing or account takeover of finance or executive mailbox",
+  "mitre_attack_techniques": [
+    "T1566",
+    "T1078"
+  ],
+  "target_asset": "Email Platform",
+  "target_process": "Finance",
+  "data_involved": [
+    "Invoice Data",
+    "Vendor Data",
+    "Employee Data"
+  ],
+  "preconditions": [
+    "Weak MFA coverage",
+    "Limited payment approval controls",
+    "High email dependency"
+  ],
+  "loss_event": "Fraudulent transfer or redirection of legitimate payment",
+  "business_consequence": "Direct financial loss, investigation effort, and possible supplier disruption",
+  "recommended_controls": [
+    "Phishing-resistant MFA",
+    "Dual approval for payments",
+    "Mailbox anomaly detection",
+    "Finance workflow verification controls"
+  ],
+  "confidence": 0.88
+}
