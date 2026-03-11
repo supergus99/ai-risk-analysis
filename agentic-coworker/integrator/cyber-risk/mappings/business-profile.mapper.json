@@ -1,0 +1,60 @@
+{
+  "version": "1.0",
+  "description": "Maps business profile inputs into normalized cyber-risk engine fields",
+  "industry_to_sector": {
+    "SaaS": "Technology",
+    "Software": "Technology",
+    "Logistics": "Logistics",
+    "Manufacturing": "Manufacturing",
+    "Healthcare": "Healthcare",
+    "Retail": "Retail",
+    "Financial Services": "FinancialServices"
+  },
+  "digital_dependency_to_multiplier": {
+    "Low": 0.8,
+    "Moderate": 1.0,
+    "High": 1.2,
+    "Critical": 1.4
+  },
+  "backup_maturity_to_recovery_weakness": {
+    "Weak": 85,
+    "Basic": 65,
+    "Managed": 45,
+    "Resilient": 20
+  },
+  "patching_maturity_to_endpoint_weakness": {
+    "Weak": 80,
+    "Basic": 60,
+    "Managed": 35,
+    "Strong": 20
+  },
+  "logging_monitoring_to_detection_gaps": {
+    "Minimal": 80,
+    "Basic": 60,
+    "Managed": 35,
+    "Advanced": 15
+  },
+  "ir_readiness_to_resilience_modifier": {
+    "Weak": 1.25,
+    "Basic": 1.10,
+    "Prepared": 0.95,
+    "Exercised": 0.85
+  },
+  "remote_access_to_external_attack_surface_bonus": {
+    "None": 0,
+    "VPN": 15,
+    "ZTNA": 5,
+    "Mixed": 20
+  },
+  "email_suite_defaults": {
+    "M365": {
+      "email_dependency": "High"
+    },
+    "Google Workspace": {
+      "email_dependency": "High"
+    },
+    "Other": {
+      "email_dependency": "Moderate"
+    }
+  }
+}

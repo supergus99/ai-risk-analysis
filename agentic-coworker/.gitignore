@@ -182,3 +182,5 @@ cython_debug/
 
 # Fellow Knowledge Base
 .fellow-data/
+__pycache__/
+.venv/

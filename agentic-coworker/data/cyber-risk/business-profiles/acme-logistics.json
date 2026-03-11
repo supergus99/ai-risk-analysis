@@ -1,0 +1,38 @@
+{
+  "organization_id": "org-001",
+  "organization_name": "Acme Logistics",
+  "industry": "Logistics",
+  "regions": ["EU", "UK"],
+  "revenue_band": "50M-250M",
+  "employee_band": "250-1000",
+  "business_model": "B2B",
+  "digital_dependency": "High",
+  "critical_processes": ["Order Fulfillment", "Customer Portal", "Finance"],
+  "data_profile": {
+    "pii": true,
+    "payment_data": false,
+    "health_data": false,
+    "employee_data": true,
+    "intellectual_property": true,
+    "regulated_data": true
+  },
+  "technology_profile": {
+    "hosting_model": "Hybrid",
+    "internet_facing_apps": 4,
+    "remote_access": "VPN",
+    "email_suite": "M365",
+    "endpoint_count": 700,
+    "critical_saas": ["M365", "CRM", "ERP"]
+  },
+  "controls_profile": {
+    "mfa_coverage": 65,
+    "edr_coverage": 80,
+    "backup_maturity": "Managed",
+    "patching_maturity": "Basic",
+    "logging_monitoring": "Managed",
+    "ir_readiness": "Basic",
+    "security_awareness": "Moderate",
+    "pam": false,
+    "vendor_risk_management": "Basic"
+  }
+}
