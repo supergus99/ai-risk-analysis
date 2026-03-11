@@ -1,4 +1,6 @@
 import { useMemo, useState } from "react";
+import { ScenarioRiskChart, ThreatActorChart } from "./components/RiskCharts";
+import "./App.css";
 
 export default function App() {
   const [apiBase, setApiBase] = useState("http://127.0.0.1:8020");
@@ -73,147 +75,257 @@ export default function App() {
   }
 
   return (
-    <div style={{ padding: 24, fontFamily: "Arial, sans-serif", maxWidth: 1280, margin: "0 auto" }}>
-      <h1 style={{ marginBottom: 8 }}>Cyber Risk Dashboard</h1>
-      <p style={{ color: "#555", marginBottom: 24 }}>
-        Unified assessment view for risks, actions, agent outputs, narrative, and advisor answers.
-      </p>
+    <div className="app-shell">
+      <header className="hero">
+        <div>
+          <div className="eyebrow">AI Powered Risk Analysis</div>
+          <h1>Cyber Risk Dashboard</h1>
+          <p>
+            Unified assessment view for risks, actions, agent outputs, narrative,
+            and advisor answers.
+          </p>
+        </div>
+        <div className="hero-status card">
+          <div className="status-label">API Health</div>
+          <div className={`health-pill ${health?.status === "ok" ? "ok" : ""}`}>
+            {health?.status || "Not checked"}
+          </div>
+          <div className="status-small">Profile: {profileName}</div>
+          <div className="status-small">
+            Assessment: {result ? "Loaded" : "None yet"}
+          </div>
+        </div>
+      </header>
 
-      <div style={{ display: "grid", gridTemplateColumns: "2fr 1fr", gap: 16, marginBottom: 16 }}>
-        <div style={{ border: "1px solid #ddd", borderRadius: 12, padding: 16 }}>
-          <h3>Assessment Controls</h3>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr auto auto", gap: 12, marginTop: 12 }}>
+      <section className="card controls-card">
+        <div className="section-title-row">
+          <h2>Assessment Controls</h2>
+          <span className="section-subtitle">Run the unified API from the UI</span>
+        </div>
+
+        <div className="controls-grid">
+          <label className="field">
+            <span>API Base URL</span>
             <input
               value={apiBase}
               onChange={(e) => setApiBase(e.target.value)}
               placeholder="API base URL"
-              style={{ padding: 10, borderRadius: 8, border: "1px solid #ccc" }}
             />
+          </label>
+
+          <label className="field">
+            <span>Business Profile</span>
             <input
               value={profileName}
               onChange={(e) => setProfileName(e.target.value)}
               placeholder="business profile JSON"
-              style={{ padding: 10, borderRadius: 8, border: "1px solid #ccc" }}
             />
-            <button onClick={checkHealth} disabled={loadingHealth} style={{ padding: "10px 14px", borderRadius: 8 }}>
-              {loadingHealth ? "Checking..." : "Check Health"}
-            </button>
-            <button onClick={runAssessment} disabled={loadingRun} style={{ padding: "10px 14px", borderRadius: 8 }}>
-              {loadingRun ? "Running..." : "Run Assessment"}
-            </button>
-          </div>
-        </div>
+          </label>
 
-        <div style={{ border: "1px solid #ddd", borderRadius: 12, padding: 16 }}>
-          <h3>Status</h3>
-          <p>Health: <strong>{health?.status || "Not checked"}</strong></p>
-          <p>Profile: <strong>{profileName}</strong></p>
-          <p>Assessment: <strong>{result ? "Loaded" : "None yet"}</strong></p>
+          <button
+            className="btn btn-secondary"
+            onClick={checkHealth}
+            disabled={loadingHealth}
+          >
+            {loadingHealth ? "Checking..." : "Check Health"}
+          </button>
+
+          <button
+            className="btn btn-primary"
+            onClick={runAssessment}
+            disabled={loadingRun}
+          >
+            {loadingRun ? "Running..." : "Run Assessment"}
+          </button>
         </div>
-      </div>
+      </section>
 
       {error ? (
-        <div style={{ background: "#fee", color: "#900", border: "1px solid #fbb", borderRadius: 12, padding: 12, marginBottom: 16 }}>
-          {error}
-        </div>
+        <section className="error-banner">
+          <strong>Request error:</strong> {error}
+        </section>
       ) : null}
 
       {result ? (
         <>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 16, marginBottom: 16 }}>
+          <section className="kpi-grid">
             {kpis.map((kpi) => (
-              <div key={kpi.label} style={{ border: "1px solid #ddd", borderRadius: 12, padding: 16 }}>
-                <div style={{ color: "#666", fontSize: 14 }}>{kpi.label}</div>
-                <div style={{ marginTop: 8, fontSize: 24, fontWeight: 700 }}>{kpi.value}</div>
+              <div key={kpi.label} className="card kpi-card">
+                <div className="kpi-label">{kpi.label}</div>
+                <div className="kpi-value">{kpi.value}</div>
               </div>
             ))}
-          </div>
+          </section>
 
-          <div style={{ display: "grid", gridTemplateColumns: "1.1fr 0.9fr", gap: 16, marginBottom: 16 }}>
-            <div style={{ border: "1px solid #ddd", borderRadius: 12, padding: 16 }}>
-              <h3>Narrative</h3>
-              <p><strong>Risk story:</strong> {result.narrative_output?.risk_story}</p>
-              <p><strong>Why this matters:</strong> {result.narrative_output?.why_this_matters}</p>
-              <p><strong>What to do first:</strong> {result.narrative_output?.what_to_do_first}</p>
-              <p><strong>Long-term direction:</strong> {result.narrative_output?.long_term_security_direction}</p>
+          <section className="two-col">
+            <div className="card">
+              <div className="section-title-row">
+                <h2>Scenario Risk Distribution</h2>
+                <span className="section-subtitle">Risk contribution by scenario</span>
+              </div>
+              <ScenarioRiskChart risks={result?.executive_summary?.top_risks || []} />
             </div>
 
-            <div style={{ border: "1px solid #ddd", borderRadius: 12, padding: 16 }}>
-              <h3>Threat Actors</h3>
-              {actors.map((actor) => (
-                <div key={actor.actor_id} style={{ border: "1px solid #eee", borderRadius: 10, padding: 10, marginBottom: 10 }}>
-                  <div style={{ display: "flex", justifyContent: "space-between" }}>
-                    <strong>{actor.actor_type}</strong>
-                    <span>{Math.round((actor.confidence || 0) * 100)}%</span>
-                  </div>
-                  <div style={{ color: "#555", marginTop: 6 }}>{actor.rationale}</div>
-                </div>
-              ))}
+            <div className="card">
+              <div className="section-title-row">
+                <h2>Threat Actor Confidence</h2>
+                <span className="section-subtitle">Confidence by inferred actor</span>
+              </div>
+              <ThreatActorChart actors={result?.threat_actors?.actors || []} />
             </div>
-          </div>
+          </section>
 
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16, marginBottom: 16 }}>
-            <div style={{ border: "1px solid #ddd", borderRadius: 12, padding: 16 }}>
-              <h3>Top Risks</h3>
-              {(result.executive_summary?.top_risks || []).map((risk) => (
-                <div key={risk.title} style={{ border: "1px solid #eee", borderRadius: 10, padding: 12, marginBottom: 10 }}>
-                  <strong>{risk.title}</strong>
-                  <div>{risk.scenario_family} · {risk.risk_band}</div>
-                  <div>EAL: {currency(risk.scenario_eal)}</div>
-                  <div>Priority score: {currency(risk.priority_score)}</div>
+          <section className="two-col">
+            <div className="card">
+              <div className="section-title-row">
+                <h2>Narrative</h2>
+                <span className="section-subtitle">Leadership-facing explanation</span>
+              </div>
+              <div className="stack">
+                <div>
+                  <h3>Risk story</h3>
+                  <p>{result.narrative_output?.risk_story}</p>
                 </div>
-              ))}
+                <div>
+                  <h3>Why this matters</h3>
+                  <p>{result.narrative_output?.why_this_matters}</p>
+                </div>
+                <div>
+                  <h3>What to do first</h3>
+                  <p>{result.narrative_output?.what_to_do_first}</p>
+                </div>
+                <div>
+                  <h3>Long-term direction</h3>
+                  <p>{result.narrative_output?.long_term_security_direction}</p>
+                </div>
+              </div>
             </div>
 
-            <div style={{ border: "1px solid #ddd", borderRadius: 12, padding: 16 }}>
-              <h3>Top Actions</h3>
-              {topActions.map((action) => (
-                <div key={action.action_id} style={{ border: "1px solid #eee", borderRadius: 10, padding: 12, marginBottom: 10 }}>
-                  <strong>{action.title}</strong>
-                  <div>Effort: {action.implementation_effort}</div>
-                  <div>Reduction: {currency(action.total_eal_reduction)}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }}>
-            <div style={{ border: "1px solid #ddd", borderRadius: 12, padding: 16 }}>
-              <h3>Selected Scenarios</h3>
-              {selectedScenarios.slice(0, 8).map((scenario) => (
-                <div key={scenario.scenario_id} style={{ border: "1px solid #eee", borderRadius: 10, padding: 12, marginBottom: 10 }}>
-                  <strong>{scenario.title}</strong>
-                  <div>{scenario.scenario_family}</div>
-                  <div>Confidence: {Math.round((scenario.selection_confidence || 0) * 100)}%</div>
-                </div>
-              ))}
-              {tailoredScenarios.length ? (
-                <div style={{ marginTop: 16 }}>
-                  <h4>Tailored Scenarios</h4>
-                  {tailoredScenarios.map((scenario) => (
-                    <div key={scenario.title} style={{ marginBottom: 8 }}>
-                      • {scenario.title}
+            <div className="card">
+              <div className="section-title-row">
+                <h2>Threat Actors</h2>
+                <span className="section-subtitle">AI-inferred threat context</span>
+              </div>
+              <div className="stack">
+                {actors.map((actor) => (
+                  <div key={actor.actor_id} className="mini-card">
+                    <div className="row-between">
+                      <strong>{actor.actor_type}</strong>
+                      <span className="badge">
+                        {Math.round((actor.confidence || 0) * 100)}%
+                      </span>
                     </div>
-                  ))}
-                </div>
-              ) : null}
+                    <p>{actor.rationale}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          <section className="two-col">
+            <div className="card">
+              <div className="section-title-row">
+                <h2>Top Risks</h2>
+                <span className="section-subtitle">Highest modeled risk priorities</span>
+              </div>
+              <div className="stack">
+                {(result.executive_summary?.top_risks || []).map((risk) => (
+                  <div key={risk.title} className="mini-card">
+                    <div className="row-between">
+                      <strong>{risk.title}</strong>
+                      <span className="badge">{risk.risk_band}</span>
+                    </div>
+                    <div className="muted">{risk.scenario_family}</div>
+                    <div className="detail-row">
+                      <span>EAL</span>
+                      <strong>{currency(risk.scenario_eal)}</strong>
+                    </div>
+                    <div className="detail-row">
+                      <span>Priority Score</span>
+                      <strong>{currency(risk.priority_score)}</strong>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
 
-            <div style={{ border: "1px solid #ddd", borderRadius: 12, padding: 16 }}>
-              <h3>Advisor Answers</h3>
-              {advisorAnswers.map((item) => (
-                <div key={item.question} style={{ border: "1px solid #eee", borderRadius: 10, padding: 12, marginBottom: 10 }}>
-                  <strong>{item.question}</strong>
-                  <div style={{ marginTop: 6 }}>{item.answer}</div>
-                </div>
-              ))}
+            <div className="card">
+              <div className="section-title-row">
+                <h2>Top Actions</h2>
+                <span className="section-subtitle">Highest-value next steps</span>
+              </div>
+              <div className="stack">
+                {topActions.map((action) => (
+                  <div key={action.action_id} className="mini-card">
+                    <div className="row-between">
+                      <strong>{action.title}</strong>
+                      <span className="badge">{action.implementation_effort}</span>
+                    </div>
+                    <div className="detail-row">
+                      <span>Reduction</span>
+                      <strong>{currency(action.total_eal_reduction)}</strong>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
-          </div>
+          </section>
+
+          <section className="two-col">
+            <div className="card">
+              <div className="section-title-row">
+                <h2>Selected Scenarios</h2>
+                <span className="section-subtitle">AI-ranked scenario relevance</span>
+              </div>
+              <div className="stack">
+                {selectedScenarios.slice(0, 8).map((scenario) => (
+                  <div key={scenario.scenario_id} className="mini-card">
+                    <div className="row-between">
+                      <strong>{scenario.title}</strong>
+                      <span className="badge">
+                        {Math.round((scenario.selection_confidence || 0) * 100)}%
+                      </span>
+                    </div>
+                    <div className="muted">{scenario.scenario_family}</div>
+                  </div>
+                ))}
+
+                {tailoredScenarios.length ? (
+                  <div className="mini-card accent-card">
+                    <strong>Tailored Scenarios</strong>
+                    <ul className="simple-list">
+                      {tailoredScenarios.map((scenario) => (
+                        <li key={scenario.title}>{scenario.title}</li>
+                      ))}
+                    </ul>
+                  </div>
+                ) : null}
+              </div>
+            </div>
+
+            <div className="card">
+              <div className="section-title-row">
+                <h2>Advisor Answers</h2>
+                <span className="section-subtitle">Precomputed Q&amp;A</span>
+              </div>
+              <div className="stack">
+                {advisorAnswers.map((item) => (
+                  <div key={item.question} className="mini-card">
+                    <strong>{item.question}</strong>
+                    <p>{item.answer}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
         </>
       ) : (
-        <div style={{ border: "1px dashed #ccc", borderRadius: 12, padding: 40, textAlign: "center", color: "#666" }}>
-          No assessment loaded yet.
-        </div>
+        <section className="card empty-state">
+          <h2>No assessment loaded yet</h2>
+          <p>
+            Check API health first, then run an assessment to populate the dashboard.
+          </p>
+        </section>
       )}
     </div>
   );
