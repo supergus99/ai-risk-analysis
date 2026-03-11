@@ -1,0 +1,31 @@
+{
+  "scenario_id": "tmpl-shadow-it-file-sharing",
+  "title": "Shadow IT or free file-sharing exposes sensitive business data",
+  "scenario_family": "ShadowITExposure",
+  "actor_type": "Opportunistic",
+  "attack_vector": "Use of unapproved free tools with weak security and sharing controls",
+  "mitre_attack_techniques": [
+    "T1530"
+  ],
+  "target_asset": "ThirdParty",
+  "target_process": "Collaboration",
+  "data_involved": [
+    "Customer Data",
+    "Internal Files",
+    "Operational Documents"
+  ],
+  "preconditions": [
+    "Use of free tools",
+    "Weak governance",
+    "Open sharing defaults"
+  ],
+  "loss_event": "Sensitive files become accessible to unauthorized parties",
+  "business_consequence": "Data exposure, customer trust impact, and cleanup effort",
+  "recommended_controls": [
+    "Standardize approved tools",
+    "Restrict public sharing",
+    "Review access regularly",
+    "Provide simple staff guidance"
+  ],
+  "confidence": 0.81
+}

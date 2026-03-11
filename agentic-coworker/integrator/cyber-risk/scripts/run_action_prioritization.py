@@ -8,7 +8,7 @@ def main() -> None:
     repo_root = Path(__file__).resolve().parents[3]
     orchestrator = AssessmentOrchestrator(str(repo_root))
 
-    result = orchestrator.run_assessment("acme-logistics.json")
+    result = orchestrator.prioritize_actions("acme-logistics.json")
     print(json.dumps(result, indent=2))
 
 

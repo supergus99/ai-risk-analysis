@@ -184,3 +184,5 @@ cython_debug/
 .fellow-data/
 __pycache__/
 .venv/
+__pycache__/
+*.pyc

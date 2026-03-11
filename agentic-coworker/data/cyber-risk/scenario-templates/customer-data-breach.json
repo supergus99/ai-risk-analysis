@@ -1,0 +1,32 @@
+{
+  "scenario_id": "tmpl-customer-data-breach",
+  "title": "Customer data breach exposes regulated information",
+  "scenario_family": "DataBreach",
+  "actor_type": "Opportunistic",
+  "attack_vector": "Compromise of externally exposed application or stolen credentials",
+  "mitre_attack_techniques": [
+    "T1190",
+    "T1078",
+    "T1041"
+  ],
+  "target_asset": "Customer Portal",
+  "target_process": "Customer Operations",
+  "data_involved": [
+    "Customer PII",
+    "Operational Data"
+  ],
+  "preconditions": [
+    "Internet-facing application",
+    "Sensitive customer data",
+    "Limited detection of exfiltration"
+  ],
+  "loss_event": "Unauthorized access and exfiltration of customer data",
+  "business_consequence": "Notification costs, legal exposure, customer churn, and regulatory scrutiny",
+  "recommended_controls": [
+    "MFA expansion",
+    "WAF and secure configuration review",
+    "Improved logging and alerting",
+    "Data minimization and segmentation"
+  ],
+  "confidence": 0.86
+}

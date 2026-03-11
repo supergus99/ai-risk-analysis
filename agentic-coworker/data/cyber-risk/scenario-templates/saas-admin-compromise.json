@@ -1,0 +1,31 @@
+{
+  "scenario_id": "tmpl-saas-admin-compromise",
+  "title": "SaaS admin account compromise impacts business platforms",
+  "scenario_family": "SaaSAdminCompromise",
+  "actor_type": "Opportunistic",
+  "attack_vector": "Compromise of administrative account for core SaaS platform",
+  "mitre_attack_techniques": [
+    "T1078",
+    "T1098"
+  ],
+  "target_asset": "SaaS Platform",
+  "target_process": "Core Business Applications",
+  "data_involved": [
+    "Customer Data",
+    "Operational Data",
+    "Configuration Data"
+  ],
+  "preconditions": [
+    "Administrative SaaS reliance",
+    "Weak admin protections"
+  ],
+  "loss_event": "Unauthorized access, configuration changes, and possible data exposure",
+  "business_consequence": "Service disruption, data exposure, and administrative recovery cost",
+  "recommended_controls": [
+    "Admin MFA",
+    "Separate admin accounts",
+    "SaaS audit logging",
+    "Break-glass account controls"
+  ],
+  "confidence": 0.85
+}

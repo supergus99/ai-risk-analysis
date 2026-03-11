@@ -1,0 +1,31 @@
+{
+  "scenario_id": "tmpl-privileged-account-takeover",
+  "title": "Privileged account takeover disrupts core administration",
+  "scenario_family": "PrivilegedTakeover",
+  "actor_type": "Opportunistic",
+  "attack_vector": "Credential theft or phishing against administrative users",
+  "mitre_attack_techniques": [
+    "T1078",
+    "T1110",
+    "T1566"
+  ],
+  "target_asset": "Identity Platform",
+  "target_process": "IT Administration",
+  "data_involved": [
+    "Administrative Data",
+    "Configuration Data"
+  ],
+  "preconditions": [
+    "Partial MFA coverage",
+    "Weak privileged access separation"
+  ],
+  "loss_event": "Administrative compromise affecting key systems and access management",
+  "business_consequence": "Service disruption, recovery costs, and elevated downstream scenario risk",
+  "recommended_controls": [
+    "Phishing-resistant MFA",
+    "Privileged access hardening",
+    "Admin account segregation",
+    "Conditional access"
+  ],
+  "confidence": 0.84
+}

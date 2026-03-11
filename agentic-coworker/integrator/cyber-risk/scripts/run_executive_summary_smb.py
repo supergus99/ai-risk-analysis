@@ -4,11 +4,15 @@ from pathlib import Path
 from orchestrators.assessment_orchestrator import AssessmentOrchestrator
 
 
-def main() -> None:
+def main():
     repo_root = Path(__file__).resolve().parents[3]
+
     orchestrator = AssessmentOrchestrator(str(repo_root))
 
-    result = orchestrator.run_assessment("acme-logistics.json")
+    result = orchestrator.build_executive_summary(
+        "small-business-low-maturity.json"
+    )
+
     print(json.dumps(result, indent=2))
 
 

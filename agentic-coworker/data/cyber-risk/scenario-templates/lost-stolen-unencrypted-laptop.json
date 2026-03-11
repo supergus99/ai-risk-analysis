@@ -1,0 +1,30 @@
+{
+  "scenario_id": "tmpl-lost-stolen-unencrypted-laptop",
+  "title": "Lost or stolen unencrypted laptop exposes business data",
+  "scenario_family": "LostDevice",
+  "actor_type": "Opportunistic",
+  "attack_vector": "Physical loss or theft of endpoint without disk encryption",
+  "mitre_attack_techniques": [
+    "T1005"
+  ],
+  "target_asset": "Endpoint",
+  "target_process": "Mobile Workforce",
+  "data_involved": [
+    "Employee Data",
+    "Customer Data",
+    "Local Files"
+  ],
+  "preconditions": [
+    "No disk encryption",
+    "Portable devices used for work"
+  ],
+  "loss_event": "Unauthorized access to locally stored data on a missing device",
+  "business_consequence": "Data exposure, reporting obligations, and device replacement cost",
+  "recommended_controls": [
+    "Enable full-disk encryption",
+    "Use screen lock and strong passwords",
+    "Reduce local data storage",
+    "Enable remote wipe"
+  ],
+  "confidence": 0.86
+}

@@ -1,0 +1,30 @@
+{
+  "scenario_id": "tmpl-mfa-fatigue-social-engineering",
+  "title": "MFA fatigue or helpdesk social engineering enables account takeover",
+  "scenario_family": "MFASocialEngineering",
+  "actor_type": "Opportunistic",
+  "attack_vector": "Repeated push prompts or social engineering of support workflows",
+  "mitre_attack_techniques": [
+    "T1621",
+    "T1566"
+  ],
+  "target_asset": "Identity Platform",
+  "target_process": "Identity and Access",
+  "data_involved": [
+    "Identity Data",
+    "Operational Data"
+  ],
+  "preconditions": [
+    "Push-based MFA",
+    "Weak identity verification workflow"
+  ],
+  "loss_event": "Unauthorized login through manipulated MFA or support process",
+  "business_consequence": "Account compromise, lateral movement, and recovery effort",
+  "recommended_controls": [
+    "Phishing-resistant MFA",
+    "Support verification controls",
+    "Disable weak push patterns",
+    "Conditional access"
+  ],
+  "confidence": 0.82
+}

@@ -1,0 +1,32 @@
+{
+  "scenario_id": "tmpl-infostealer-unmanaged-endpoint",
+  "title": "Infostealer on unmanaged endpoint leads to credential loss",
+  "scenario_family": "Infostealer",
+  "actor_type": "Opportunistic",
+  "attack_vector": "Malware infection on unmanaged or lightly protected endpoint",
+  "mitre_attack_techniques": [
+    "T1056",
+    "T1555",
+    "T1005"
+  ],
+  "target_asset": "Endpoint",
+  "target_process": "User Productivity",
+  "data_involved": [
+    "Credentials",
+    "Browser Data",
+    "Operational Data"
+  ],
+  "preconditions": [
+    "Unmanaged devices",
+    "Weak endpoint protection"
+  ],
+  "loss_event": "Credential theft and possible reuse against business services",
+  "business_consequence": "Account compromise, fraud, and incident response effort",
+  "recommended_controls": [
+    "Use managed devices",
+    "Install endpoint protection",
+    "Use password managers",
+    "Reduce local admin rights"
+  ],
+  "confidence": 0.84
+}

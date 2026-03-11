@@ -1,0 +1,31 @@
+{
+  "scenario_id": "tmpl-third-party-compromise",
+  "title": "Third-party compromise impacts business operations",
+  "scenario_family": "ThirdPartyCompromise",
+  "actor_type": "Opportunistic",
+  "attack_vector": "Compromise of critical SaaS or service provider dependency",
+  "mitre_attack_techniques": [
+    "T1195",
+    "T1078"
+  ],
+  "target_asset": "ThirdParty",
+  "target_process": "Business Operations",
+  "data_involved": [
+    "Operational Data",
+    "Supplier Data",
+    "Customer Data"
+  ],
+  "preconditions": [
+    "High SaaS dependency",
+    "Limited vendor assurance"
+  ],
+  "loss_event": "Operational disruption or data exposure through a supplier",
+  "business_consequence": "Process disruption, contractual impact, and customer trust damage",
+  "recommended_controls": [
+    "Vendor risk management",
+    "Supplier segmentation",
+    "Contractual security requirements",
+    "Business continuity planning"
+  ],
+  "confidence": 0.8
+}

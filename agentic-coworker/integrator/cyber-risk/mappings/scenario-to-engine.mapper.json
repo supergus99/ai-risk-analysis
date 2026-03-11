@@ -7,62 +7,122 @@
       "default_actor_multiplier": 1.3,
       "default_control_adjustment": 1.15,
       "default_trend_adjustment": 1.05,
-      "default_scoring_matrix": {
-        "threat_relevance": 4,
-        "exploitability": 4,
-        "resilience_weakness": 3,
-        "impact_severity": 4
-      }
+      "default_scoring_matrix": { "threat_relevance": 4, "exploitability": 4, "resilience_weakness": 3, "impact_severity": 4 }
     },
     "BEC": {
       "base_sector_rate_metric": "bec_event_rate",
       "default_actor_multiplier": 1.2,
       "default_control_adjustment": 1.10,
       "default_trend_adjustment": 1.00,
-      "default_scoring_matrix": {
-        "threat_relevance": 4,
-        "exploitability": 3,
-        "resilience_weakness": 3,
-        "impact_severity": 3
-      }
+      "default_scoring_matrix": { "threat_relevance": 4, "exploitability": 3, "resilience_weakness": 3, "impact_severity": 3 }
     },
     "DataBreach": {
       "base_sector_rate_metric": "data_breach_event_rate",
       "default_actor_multiplier": 1.15,
       "default_control_adjustment": 1.10,
       "default_trend_adjustment": 1.00,
-      "default_scoring_matrix": {
-        "threat_relevance": 3,
-        "exploitability": 3,
-        "resilience_weakness": 3,
-        "impact_severity": 4
-      }
+      "default_scoring_matrix": { "threat_relevance": 3, "exploitability": 3, "resilience_weakness": 3, "impact_severity": 4 }
+    },
+    "PrivilegedTakeover": {
+      "base_sector_rate_metric": "privileged_takeover_event_rate",
+      "default_actor_multiplier": 1.15,
+      "default_control_adjustment": 1.15,
+      "default_trend_adjustment": 1.00,
+      "default_scoring_matrix": { "threat_relevance": 3, "exploitability": 4, "resilience_weakness": 3, "impact_severity": 3 }
+    },
+    "ThirdPartyCompromise": {
+      "base_sector_rate_metric": "third_party_event_rate",
+      "default_actor_multiplier": 1.10,
+      "default_control_adjustment": 1.05,
+      "default_trend_adjustment": 1.00,
+      "default_scoring_matrix": { "threat_relevance": 3, "exploitability": 3, "resilience_weakness": 3, "impact_severity": 3 }
+    },
+    "CredentialTheft": {
+      "base_sector_rate_metric": "credential_theft_event_rate",
+      "default_actor_multiplier": 1.10,
+      "default_control_adjustment": 1.10,
+      "default_trend_adjustment": 1.00,
+      "default_scoring_matrix": { "threat_relevance": 3, "exploitability": 3, "resilience_weakness": 3, "impact_severity": 2 }
+    },
+    "EdgeExploitation": {
+      "base_sector_rate_metric": "edge_exploitation_event_rate",
+      "default_actor_multiplier": 1.15,
+      "default_control_adjustment": 1.15,
+      "default_trend_adjustment": 1.05,
+      "default_scoring_matrix": { "threat_relevance": 3, "exploitability": 4, "resilience_weakness": 3, "impact_severity": 3 }
+    },
+    "SaaSAdminCompromise": {
+      "base_sector_rate_metric": "saas_admin_compromise_event_rate",
+      "default_actor_multiplier": 1.10,
+      "default_control_adjustment": 1.10,
+      "default_trend_adjustment": 1.00,
+      "default_scoring_matrix": { "threat_relevance": 3, "exploitability": 3, "resilience_weakness": 3, "impact_severity": 3 }
+    },
+    "CloudExposure": {
+      "base_sector_rate_metric": "cloud_exposure_event_rate",
+      "default_actor_multiplier": 1.05,
+      "default_control_adjustment": 1.05,
+      "default_trend_adjustment": 1.00,
+      "default_scoring_matrix": { "threat_relevance": 2, "exploitability": 3, "resilience_weakness": 3, "impact_severity": 3 }
+    },
+    "MaliciousOAuth": {
+      "base_sector_rate_metric": "malicious_oauth_event_rate",
+      "default_actor_multiplier": 1.05,
+      "default_control_adjustment": 1.05,
+      "default_trend_adjustment": 1.00,
+      "default_scoring_matrix": { "threat_relevance": 2, "exploitability": 3, "resilience_weakness": 3, "impact_severity": 2 }
+    },
+    "MFASocialEngineering": {
+      "base_sector_rate_metric": "mfa_social_engineering_event_rate",
+      "default_actor_multiplier": 1.10,
+      "default_control_adjustment": 1.10,
+      "default_trend_adjustment": 1.00,
+      "default_scoring_matrix": { "threat_relevance": 3, "exploitability": 3, "resilience_weakness": 3, "impact_severity": 2 }
+    },
+    "LostDevice": {
+      "base_sector_rate_metric": "lost_device_event_rate",
+      "default_actor_multiplier": 1.00,
+      "default_control_adjustment": 1.05,
+      "default_trend_adjustment": 1.00,
+      "default_scoring_matrix": { "threat_relevance": 2, "exploitability": 2, "resilience_weakness": 3, "impact_severity": 2 }
+    },
+    "Infostealer": {
+      "base_sector_rate_metric": "infostealer_event_rate",
+      "default_actor_multiplier": 1.10,
+      "default_control_adjustment": 1.10,
+      "default_trend_adjustment": 1.00,
+      "default_scoring_matrix": { "threat_relevance": 3, "exploitability": 3, "resilience_weakness": 3, "impact_severity": 2 }
+    },
+    "ShadowITExposure": {
+      "base_sector_rate_metric": "shadow_it_exposure_event_rate",
+      "default_actor_multiplier": 1.00,
+      "default_control_adjustment": 1.05,
+      "default_trend_adjustment": 1.00,
+      "default_scoring_matrix": { "threat_relevance": 2, "exploitability": 3, "resilience_weakness": 3, "impact_severity": 2 }
+    },
+    "SharedAdminAbuse": {
+      "base_sector_rate_metric": "shared_admin_abuse_event_rate",
+      "default_actor_multiplier": 1.10,
+      "default_control_adjustment": 1.15,
+      "default_trend_adjustment": 1.00,
+      "default_scoring_matrix": { "threat_relevance": 3, "exploitability": 4, "resilience_weakness": 4, "impact_severity": 3 }
     }
   },
   "loss_defaults": {
-    "Ransomware": {
-      "response_cost": 180000,
-      "recovery_cost": 450000,
-      "business_interruption_cost": 900000,
-      "regulatory_legal_cost": 150000,
-      "customer_remediation_cost": 70000,
-      "reputation_drag_cost": 250000
-    },
-    "BEC": {
-      "response_cost": 60000,
-      "recovery_cost": 40000,
-      "business_interruption_cost": 100000,
-      "regulatory_legal_cost": 30000,
-      "customer_remediation_cost": 10000,
-      "reputation_drag_cost": 40000
-    },
-    "DataBreach": {
-      "response_cost": 220000,
-      "recovery_cost": 180000,
-      "business_interruption_cost": 250000,
-      "regulatory_legal_cost": 300000,
-      "customer_remediation_cost": 120000,
-      "reputation_drag_cost": 200000
-    }
+    "Ransomware": { "response_cost": 180000, "recovery_cost": 450000, "business_interruption_cost": 900000, "regulatory_legal_cost": 150000, "customer_remediation_cost": 70000, "reputation_drag_cost": 250000 },
+    "BEC": { "response_cost": 60000, "recovery_cost": 40000, "business_interruption_cost": 100000, "regulatory_legal_cost": 30000, "customer_remediation_cost": 10000, "reputation_drag_cost": 40000 },
+    "DataBreach": { "response_cost": 220000, "recovery_cost": 180000, "business_interruption_cost": 250000, "regulatory_legal_cost": 300000, "customer_remediation_cost": 120000, "reputation_drag_cost": 200000 },
+    "PrivilegedTakeover": { "response_cost": 100000, "recovery_cost": 120000, "business_interruption_cost": 180000, "regulatory_legal_cost": 40000, "customer_remediation_cost": 20000, "reputation_drag_cost": 60000 },
+    "ThirdPartyCompromise": { "response_cost": 90000, "recovery_cost": 110000, "business_interruption_cost": 220000, "regulatory_legal_cost": 50000, "customer_remediation_cost": 30000, "reputation_drag_cost": 70000 },
+    "CredentialTheft": { "response_cost": 45000, "recovery_cost": 30000, "business_interruption_cost": 60000, "regulatory_legal_cost": 15000, "customer_remediation_cost": 10000, "reputation_drag_cost": 15000 },
+    "EdgeExploitation": { "response_cost": 120000, "recovery_cost": 150000, "business_interruption_cost": 220000, "regulatory_legal_cost": 50000, "customer_remediation_cost": 20000, "reputation_drag_cost": 60000 },
+    "SaaSAdminCompromise": { "response_cost": 100000, "recovery_cost": 90000, "business_interruption_cost": 160000, "regulatory_legal_cost": 50000, "customer_remediation_cost": 25000, "reputation_drag_cost": 50000 },
+    "CloudExposure": { "response_cost": 80000, "recovery_cost": 50000, "business_interruption_cost": 50000, "regulatory_legal_cost": 100000, "customer_remediation_cost": 40000, "reputation_drag_cost": 50000 },
+    "MaliciousOAuth": { "response_cost": 50000, "recovery_cost": 35000, "business_interruption_cost": 30000, "regulatory_legal_cost": 20000, "customer_remediation_cost": 10000, "reputation_drag_cost": 15000 },
+    "MFASocialEngineering": { "response_cost": 50000, "recovery_cost": 35000, "business_interruption_cost": 40000, "regulatory_legal_cost": 15000, "customer_remediation_cost": 10000, "reputation_drag_cost": 15000 },
+    "LostDevice": { "response_cost": 15000, "recovery_cost": 5000, "business_interruption_cost": 10000, "regulatory_legal_cost": 20000, "customer_remediation_cost": 10000, "reputation_drag_cost": 10000 },
+    "Infostealer": { "response_cost": 30000, "recovery_cost": 20000, "business_interruption_cost": 25000, "regulatory_legal_cost": 10000, "customer_remediation_cost": 5000, "reputation_drag_cost": 10000 },
+    "ShadowITExposure": { "response_cost": 20000, "recovery_cost": 10000, "business_interruption_cost": 15000, "regulatory_legal_cost": 30000, "customer_remediation_cost": 10000, "reputation_drag_cost": 15000 },
+    "SharedAdminAbuse": { "response_cost": 50000, "recovery_cost": 45000, "business_interruption_cost": 90000, "regulatory_legal_cost": 15000, "customer_remediation_cost": 5000, "reputation_drag_cost": 15000 }
   }
 }

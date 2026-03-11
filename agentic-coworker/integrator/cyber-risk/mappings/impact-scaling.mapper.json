@@ -1,0 +1,22 @@
+{
+  "version": "1.0",
+  "description": "Scales scenario impact by business size",
+  "revenue_band_multiplier": {
+    "<10M": 0.35,
+    "10M-50M": 0.60,
+    "50M-250M": 1.00,
+    "250M-1B": 1.60,
+    ">1B": 2.40
+  },
+  "employee_band_multiplier": {
+    "<50": 0.50,
+    "50-250": 0.75,
+    "250-1000": 1.00,
+    "1000-5000": 1.40,
+    ">5000": 1.90
+  },
+  "blended_weight": {
+    "revenue": 0.65,
+    "employee": 0.35
+  }
+}
