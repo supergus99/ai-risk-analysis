@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://cyber-risk.local/schemas/explanation-output.schema.json",
+  "title": "Explanation Output",
+  "type": "object",
+  "required": [
+    "executive_summary",
+    "top_risk_explanations",
+    "top_action_explanations"
+  ],
+  "properties": {
+    "executive_summary": {
+      "type": "string"
+    },
+    "top_risk_explanations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["scenario_family", "title", "explanation"],
+        "properties": {
+          "scenario_family": { "type": "string" },
+          "title": { "type": "string" },
+          "explanation": { "type": "string" }
+        },
+        "additionalProperties": false
+      }
+    },
+    "top_action_explanations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["action_id", "title", "explanation"],
+        "properties": {
+          "action_id": { "type": "string" },
+          "title": { "type": "string" },
+          "explanation": { "type": "string" }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,31 @@
+{
+  "scenario_id": "tmpl-malicious-oauth-consent",
+  "title": "Malicious OAuth application gains access to business data",
+  "scenario_family": "MaliciousOAuth",
+  "actor_type": "Opportunistic",
+  "attack_vector": "User consents to malicious OAuth app with mailbox or file access",
+  "mitre_attack_techniques": [
+    "T1528",
+    "T1566"
+  ],
+  "target_asset": "Email and Collaboration Platform",
+  "target_process": "User Productivity",
+  "data_involved": [
+    "Email Data",
+    "Shared Files",
+    "Contacts"
+  ],
+  "preconditions": [
+    "Cloud email suite",
+    "Weak app consent governance"
+  ],
+  "loss_event": "Unauthorized ongoing access to business data through a trusted app",
+  "business_consequence": "Silent data leakage, fraud enablement, and investigation effort",
+  "recommended_controls": [
+    "Restrict OAuth consent",
+    "Review connected apps",
+    "Admin approval workflow",
+    "User awareness"
+  ],
+  "confidence": 0.8
+}

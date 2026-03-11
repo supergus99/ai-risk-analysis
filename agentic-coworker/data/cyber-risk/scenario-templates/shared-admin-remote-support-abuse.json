@@ -1,0 +1,31 @@
+{
+  "scenario_id": "tmpl-shared-admin-remote-support-abuse",
+  "title": "Shared admin account or weak remote support access is abused",
+  "scenario_family": "SharedAdminAbuse",
+  "actor_type": "Opportunistic",
+  "attack_vector": "Weakly controlled remote support tool or shared admin credential misuse",
+  "mitre_attack_techniques": [
+    "T1078",
+    "T1219"
+  ],
+  "target_asset": "Administrative Access",
+  "target_process": "IT Administration",
+  "data_involved": [
+    "Administrative Data",
+    "Operational Data"
+  ],
+  "preconditions": [
+    "Shared admin credentials",
+    "Weak remote support controls",
+    "Limited technical oversight"
+  ],
+  "loss_event": "Unauthorized admin activity affecting business systems",
+  "business_consequence": "Operational disruption, recovery effort, and increased downstream attack risk",
+  "recommended_controls": [
+    "Remove shared admin accounts",
+    "Use named admin identities",
+    "Restrict remote support tools",
+    "Review admin logs"
+  ],
+  "confidence": 0.83
+}

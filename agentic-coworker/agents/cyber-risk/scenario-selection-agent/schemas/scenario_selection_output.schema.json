@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://cyber-risk.local/schemas/scenario-selection-output.schema.json",
+  "title": "Scenario Selection Output",
+  "type": "object",
+  "required": ["selected_scenarios", "tailored_scenarios"],
+  "properties": {
+    "selected_scenarios": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "scenario_id",
+          "scenario_family",
+          "title",
+          "selection_confidence",
+          "selection_rationale"
+        ],
+        "properties": {
+          "scenario_id": { "type": "string" },
+          "scenario_family": { "type": "string" },
+          "title": { "type": "string" },
+          "selection_confidence": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          },
+          "selection_rationale": { "type": "string" }
+        },
+        "additionalProperties": false
+      }
+    },
+    "tailored_scenarios": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "title",
+          "scenario_family",
+          "selection_confidence",
+          "selection_rationale"
+        ],
+        "properties": {
+          "title": { "type": "string" },
+          "scenario_family": { "type": "string" },
+          "selection_confidence": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          },
+          "selection_rationale": { "type": "string" }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

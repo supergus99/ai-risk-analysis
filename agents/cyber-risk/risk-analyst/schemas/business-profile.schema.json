@@ -1,0 +1,234 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://cyber-risk.local/schemas/business-profile.schema.json",
+  "title": "Business Profile",
+  "type": "object",
+  "required": [
+    "organization_id",
+    "industry",
+    "regions",
+    "revenue_band",
+    "employee_band",
+    "digital_dependency",
+    "data_profile",
+    "technology_profile",
+    "controls_profile"
+  ],
+  "properties": {
+    "organization_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "organization_name": {
+      "type": "string"
+    },
+    "industry": {
+      "type": "string",
+      "minLength": 1
+    },
+    "regions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    },
+    "revenue_band": {
+      "type": "string",
+      "enum": [
+        "<10M",
+        "10M-50M",
+        "50M-250M",
+        "250M-1B",
+        ">1B"
+      ]
+    },
+    "employee_band": {
+      "type": "string",
+      "enum": [
+        "<50",
+        "50-250",
+        "250-1000",
+        "1000-5000",
+        ">5000"
+      ]
+    },
+    "business_model": {
+      "type": "string",
+      "enum": [
+        "B2B",
+        "B2C",
+        "B2B2C",
+        "Mixed"
+      ]
+    },
+    "digital_dependency": {
+      "type": "string",
+      "enum": [
+        "Low",
+        "Moderate",
+        "High",
+        "Critical"
+      ]
+    },
+    "critical_processes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "data_profile": {
+      "type": "object",
+      "required": [
+        "pii",
+        "payment_data",
+        "health_data",
+        "employee_data",
+        "intellectual_property",
+        "regulated_data"
+      ],
+      "properties": {
+        "pii": { "type": "boolean" },
+        "payment_data": { "type": "boolean" },
+        "health_data": { "type": "boolean" },
+        "employee_data": { "type": "boolean" },
+        "intellectual_property": { "type": "boolean" },
+        "regulated_data": { "type": "boolean" }
+      },
+      "additionalProperties": false
+    },
+    "technology_profile": {
+      "type": "object",
+      "required": [
+        "hosting_model",
+        "internet_facing_apps",
+        "remote_access",
+        "email_suite",
+        "endpoint_count"
+      ],
+      "properties": {
+        "hosting_model": {
+          "type": "string",
+          "enum": [
+            "Cloud",
+            "Hybrid",
+            "OnPrem"
+          ]
+        },
+        "internet_facing_apps": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "remote_access": {
+          "type": "string",
+          "enum": [
+            "None",
+            "VPN",
+            "ZTNA",
+            "Mixed"
+          ]
+        },
+        "email_suite": {
+          "type": "string",
+          "enum": [
+            "M365",
+            "Google Workspace",
+            "Other"
+          ]
+        },
+        "endpoint_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "critical_saas": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "controls_profile": {
+      "type": "object",
+      "required": [
+        "mfa_coverage",
+        "edr_coverage",
+        "backup_maturity",
+        "patching_maturity",
+        "logging_monitoring",
+        "ir_readiness"
+      ],
+      "properties": {
+        "mfa_coverage": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "edr_coverage": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "backup_maturity": {
+          "type": "string",
+          "enum": [
+            "Weak",
+            "Basic",
+            "Managed",
+            "Resilient"
+          ]
+        },
+        "patching_maturity": {
+          "type": "string",
+          "enum": [
+            "Weak",
+            "Basic",
+            "Managed",
+            "Strong"
+          ]
+        },
+        "logging_monitoring": {
+          "type": "string",
+          "enum": [
+            "Minimal",
+            "Basic",
+            "Managed",
+            "Advanced"
+          ]
+        },
+        "ir_readiness": {
+          "type": "string",
+          "enum": [
+            "Weak",
+            "Basic",
+            "Prepared",
+            "Exercised"
+          ]
+        },
+        "security_awareness": {
+          "type": "string",
+          "enum": [
+            "Low",
+            "Moderate",
+            "High"
+          ]
+        },
+        "pam": {
+          "type": "boolean"
+        },
+        "vendor_risk_management": {
+          "type": "string",
+          "enum": [
+            "Weak",
+            "Basic",
+            "Managed",
+            "Strong"
+          ]
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

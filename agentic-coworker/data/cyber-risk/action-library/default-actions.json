@@ -1,0 +1,75 @@
+{
+  "actions": [
+    {
+      "action_id": "act-mfa-admin",
+      "title": "Deploy phishing-resistant MFA for admins and remote access",
+      "description": "Strengthen identity assurance for privileged and remote access accounts.",
+      "scenarios_affected": [
+        "Ransomware",
+        "BEC",
+        "PrivilegedTakeover",
+        "DataBreach"
+      ],
+      "probability_reduction": 0.30,
+      "loss_reduction": 0.05,
+      "implementation_effort": "Medium"
+    },
+    {
+      "action_id": "act-immutable-backups",
+      "title": "Implement immutable backups and recovery testing",
+      "description": "Improve ransomware and recovery resilience through isolated backups and regular testing.",
+      "scenarios_affected": [
+        "Ransomware"
+      ],
+      "probability_reduction": 0.10,
+      "loss_reduction": 0.40,
+      "implementation_effort": "Medium"
+    },
+    {
+      "action_id": "act-pam",
+      "title": "Harden privileged access and administrative segregation",
+      "description": "Reduce administrative compromise likelihood by introducing PAM and account separation.",
+      "scenarios_affected": [
+        "PrivilegedTakeover",
+        "Ransomware",
+        "DataBreach"
+      ],
+      "probability_reduction": 0.20,
+      "loss_reduction": 0.05,
+      "implementation_effort": "High"
+    },
+    {
+      "action_id": "act-email-finance-controls",
+      "title": "Strengthen email protection and finance verification controls",
+      "description": "Reduce phishing-led fraud and payment diversion through verification controls and mailbox protections.",
+      "scenarios_affected": [
+        "BEC"
+      ],
+      "probability_reduction": 0.35,
+      "loss_reduction": 0.10,
+      "implementation_effort": "Low"
+    },
+    {
+      "action_id": "act-vendor-risk",
+      "title": "Improve vendor risk management for critical providers",
+      "description": "Reduce supplier-related risk through assurance, segmentation, and continuity planning.",
+      "scenarios_affected": [
+        "ThirdPartyCompromise"
+      ],
+      "probability_reduction": 0.20,
+      "loss_reduction": 0.10,
+      "implementation_effort": "Medium"
+    },
+    {
+      "action_id": "act-app-hardening",
+      "title": "Harden internet-facing applications and improve monitoring",
+      "description": "Reduce exposure to application compromise and data breach scenarios.",
+      "scenarios_affected": [
+        "DataBreach"
+      ],
+      "probability_reduction": 0.20,
+      "loss_reduction": 0.10,
+      "implementation_effort": "Medium"
+    }
+  ]
+}

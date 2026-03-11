@@ -1,0 +1,32 @@
+{
+  "scenario_id": "tmpl-cloud-storage-exposure",
+  "title": "Cloud storage exposure leaks business or customer data",
+  "scenario_family": "CloudExposure",
+  "actor_type": "Opportunistic",
+  "attack_vector": "Misconfigured public cloud storage or file-sharing permissions",
+  "mitre_attack_techniques": [
+    "T1530",
+    "T1083"
+  ],
+  "target_asset": "Cloud Storage",
+  "target_process": "Customer Operations",
+  "data_involved": [
+    "Customer Data",
+    "Internal Documents",
+    "Operational Data"
+  ],
+  "preconditions": [
+    "Cloud usage",
+    "Weak sharing controls",
+    "Limited configuration review"
+  ],
+  "loss_event": "Unauthorized public or external access to stored data",
+  "business_consequence": "Data exposure, notification costs, customer concern, and compliance issues",
+  "recommended_controls": [
+    "Restrict public sharing",
+    "Review storage permissions",
+    "Data classification",
+    "Configuration monitoring"
+  ],
+  "confidence": 0.83
+}

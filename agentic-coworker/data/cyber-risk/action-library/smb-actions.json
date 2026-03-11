@@ -1,0 +1,84 @@
+{
+  "actions": [
+    {
+      "action_id": "act-smb-mfa-all",
+      "title": "Turn on MFA for all email, admin, and remote access accounts",
+      "description": "Use built-in MFA on core services first, especially email and admin accounts.",
+      "scenarios_affected": [
+        "Ransomware",
+        "BEC",
+        "CredentialTheft",
+        "PrivilegedTakeover",
+        "MFASocialEngineering",
+        "SaaSAdminCompromise"
+      ],
+      "probability_reduction": 0.35,
+      "loss_reduction": 0.05,
+      "implementation_effort": "Low"
+    },
+    {
+      "action_id": "act-smb-disk-encryption",
+      "title": "Enable full-disk encryption on laptops and work devices",
+      "description": "Use built-in OS disk encryption and require screen lock.",
+      "scenarios_affected": [
+        "LostDevice"
+      ],
+      "probability_reduction": 0.10,
+      "loss_reduction": 0.70,
+      "implementation_effort": "Low"
+    },
+    {
+      "action_id": "act-smb-remove-shared-admin",
+      "title": "Remove shared admin accounts and use named admin users",
+      "description": "Stop using shared admin credentials and restrict admin access.",
+      "scenarios_affected": [
+        "SharedAdminAbuse",
+        "PrivilegedTakeover",
+        "Ransomware"
+      ],
+      "probability_reduction": 0.30,
+      "loss_reduction": 0.05,
+      "implementation_effort": "Medium"
+    },
+    {
+      "action_id": "act-smb-approved-tools",
+      "title": "Stop using free sharing tools and standardize approved apps",
+      "description": "Use one approved file-sharing and collaboration platform with safer defaults.",
+      "scenarios_affected": [
+        "ShadowITExposure",
+        "CloudExposure",
+        "MaliciousOAuth"
+      ],
+      "probability_reduction": 0.30,
+      "loss_reduction": 0.10,
+      "implementation_effort": "Low"
+    },
+    {
+      "action_id": "act-smb-managed-backup",
+      "title": "Use managed cloud backup and test recovery",
+      "description": "Protect critical files and systems with simple, tested backup and restore procedures.",
+      "scenarios_affected": [
+        "Ransomware",
+        "LostDevice",
+        "ThirdPartyCompromise"
+      ],
+      "probability_reduction": 0.05,
+      "loss_reduction": 0.35,
+      "implementation_effort": "Low"
+    },
+    {
+      "action_id": "act-smb-auto-patching",
+      "title": "Turn on automatic patching for endpoints and internet-facing tools",
+      "description": "Reduce risk from known vulnerabilities by keeping systems current.",
+      "scenarios_affected": [
+        "EdgeExploitation",
+        "Infostealer",
+        "CredentialTheft",
+        "Ransomware"
+      ],
+      "probability_reduction": 0.25,
+      "loss_reduction": 0.05,
+      "implementation_effort": "Low"
+    }
+  ]
+}

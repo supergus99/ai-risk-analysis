@@ -1,0 +1,46 @@
+{
+  "organization_id": "org-002",
+  "organization_name": "SmallBiz Services",
+  "industry": "Retail",
+  "regions": ["EU"],
+  "revenue_band": "<10M",
+  "employee_band": "<50",
+  "business_model": "B2C",
+  "digital_dependency": "Moderate",
+  "critical_processes": ["Sales", "Email", "Customer Service"],
+  "data_profile": {
+    "pii": true,
+    "payment_data": false,
+    "health_data": false,
+    "employee_data": true,
+    "intellectual_property": false,
+    "regulated_data": true
+  },
+  "technology_profile": {
+    "hosting_model": "Cloud",
+    "internet_facing_apps": 1,
+    "remote_access": "VPN",
+    "email_suite": "Other",
+    "endpoint_count": 18,
+    "critical_saas": ["Email", "Accounting", "File Sharing"]
+  },
+  "controls_profile": {
+    "mfa_coverage": 20,
+    "edr_coverage": 10,
+    "backup_maturity": "Basic",
+    "patching_maturity": "Weak",
+    "logging_monitoring": "Minimal",
+    "ir_readiness": "Weak",
+    "security_awareness": "Low",
+    "pam": false,
+    "vendor_risk_management": "Weak"
+  },
+  "smb_profile_flags": {
+    "uses_free_tools": true,
+    "no_disk_encryption": true,
+    "shared_admin_accounts": true,
+    "no_dedicated_it_staff": true,
+    "unmanaged_devices": true,
+    "no_tested_backups": true
+  }
+}

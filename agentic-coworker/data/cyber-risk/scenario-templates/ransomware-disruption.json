@@ -1,0 +1,33 @@
+{
+  "scenario_id": "tmpl-ransomware-disruption",
+  "title": "Ransomware disrupts critical operations",
+  "scenario_family": "Ransomware",
+  "actor_type": "Ransomware",
+  "attack_vector": "Compromised remote access or identity credentials followed by lateral movement",
+  "mitre_attack_techniques": [
+    "T1078",
+    "T1021",
+    "T1486"
+  ],
+  "target_asset": "Identity Platform",
+  "target_process": "Critical Operations",
+  "data_involved": [
+    "Operational Data",
+    "Employee Data"
+  ],
+  "preconditions": [
+    "Remote access exposure",
+    "Weak privileged access controls",
+    "Inadequate recovery isolation"
+  ],
+  "loss_event": "Encryption of critical systems and disruption of operations",
+  "business_consequence": "Multi-day interruption, recovery costs, and potential data extortion",
+  "recommended_controls": [
+    "Phishing-resistant MFA",
+    "Privileged access hardening",
+    "Immutable backups",
+    "Segmentation",
+    "EDR coverage improvement"
+  ],
+  "confidence": 0.9
+}

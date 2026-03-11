@@ -1,0 +1,36 @@
+{
+  "version": "1.0",
+  "benchmarks": [
+    { "sector": "Logistics", "region": "EU", "metric_name": "ransomware_event_rate", "value": 0.12, "unit": "annual_probability", "confidence": 0.80, "source": "default-benchmark-set" },
+    { "sector": "Logistics", "region": "EU", "metric_name": "bec_event_rate", "value": 0.09, "unit": "annual_probability", "confidence": 0.75, "source": "default-benchmark-set" },
+    { "sector": "Logistics", "region": "EU", "metric_name": "data_breach_event_rate", "value": 0.07, "unit": "annual_probability", "confidence": 0.78, "source": "default-benchmark-set" },
+    { "sector": "Logistics", "region": "EU", "metric_name": "privileged_takeover_event_rate", "value": 0.08, "unit": "annual_probability", "confidence": 0.70, "source": "default-benchmark-set" },
+    { "sector": "Logistics", "region": "EU", "metric_name": "third_party_event_rate", "value": 0.06, "unit": "annual_probability", "confidence": 0.72, "source": "default-benchmark-set" },
+    { "sector": "Logistics", "region": "EU", "metric_name": "credential_theft_event_rate", "value": 0.10, "unit": "annual_probability", "confidence": 0.75, "source": "default-benchmark-set" },
+    { "sector": "Logistics", "region": "EU", "metric_name": "edge_exploitation_event_rate", "value": 0.08, "unit": "annual_probability", "confidence": 0.74, "source": "default-benchmark-set" },
+    { "sector": "Logistics", "region": "EU", "metric_name": "saas_admin_compromise_event_rate", "value": 0.07, "unit": "annual_probability", "confidence": 0.72, "source": "default-benchmark-set" },
+    { "sector": "Logistics", "region": "EU", "metric_name": "cloud_exposure_event_rate", "value": 0.05, "unit": "annual_probability", "confidence": 0.70, "source": "default-benchmark-set" },
+    { "sector": "Logistics", "region": "EU", "metric_name": "malicious_oauth_event_rate", "value": 0.04, "unit": "annual_probability", "confidence": 0.68, "source": "default-benchmark-set" },
+    { "sector": "Logistics", "region": "EU", "metric_name": "mfa_social_engineering_event_rate", "value": 0.05, "unit": "annual_probability", "confidence": 0.68, "source": "default-benchmark-set" },
+    { "sector": "Logistics", "region": "EU", "metric_name": "lost_device_event_rate", "value": 0.03, "unit": "annual_probability", "confidence": 0.65, "source": "default-benchmark-set" },
+    { "sector": "Logistics", "region": "EU", "metric_name": "infostealer_event_rate", "value": 0.06, "unit": "annual_probability", "confidence": 0.69, "source": "default-benchmark-set" },
+    { "sector": "Logistics", "region": "EU", "metric_name": "shadow_it_exposure_event_rate", "value": 0.04, "unit": "annual_probability", "confidence": 0.67, "source": "default-benchmark-set" },
+    { "sector": "Logistics", "region": "EU", "metric_name": "shared_admin_abuse_event_rate", "value": 0.05, "unit": "annual_probability", "confidence": 0.70, "source": "default-benchmark-set" },
+
+    { "sector": "Retail", "region": "EU", "metric_name": "ransomware_event_rate", "value": 0.10, "unit": "annual_probability", "confidence": 0.78, "source": "default-benchmark-set" },
+    { "sector": "Retail", "region": "EU", "metric_name": "bec_event_rate", "value": 0.08, "unit": "annual_probability", "confidence": 0.72, "source": "default-benchmark-set" },
+    { "sector": "Retail", "region": "EU", "metric_name": "data_breach_event_rate", "value": 0.06, "unit": "annual_probability", "confidence": 0.74, "source": "default-benchmark-set" },
+    { "sector": "Retail", "region": "EU", "metric_name": "privileged_takeover_event_rate", "value": 0.06, "unit": "annual_probability", "confidence": 0.68, "source": "default-benchmark-set" },
+    { "sector": "Retail", "region": "EU", "metric_name": "third_party_event_rate", "value": 0.05, "unit": "annual_probability", "confidence": 0.68, "source": "default-benchmark-set" },
+    { "sector": "Retail", "region": "EU", "metric_name": "credential_theft_event_rate", "value": 0.09, "unit": "annual_probability", "confidence": 0.73, "source": "default-benchmark-set" },
+    { "sector": "Retail", "region": "EU", "metric_name": "edge_exploitation_event_rate", "value": 0.06, "unit": "annual_probability", "confidence": 0.70, "source": "default-benchmark-set" },
+    { "sector": "Retail", "region": "EU", "metric_name": "saas_admin_compromise_event_rate", "value": 0.05, "unit": "annual_probability", "confidence": 0.68, "source": "default-benchmark-set" },
+    { "sector": "Retail", "region": "EU", "metric_name": "cloud_exposure_event_rate", "value": 0.05, "unit": "annual_probability", "confidence": 0.68, "source": "default-benchmark-set" },
+    { "sector": "Retail", "region": "EU", "metric_name": "malicious_oauth_event_rate", "value": 0.04, "unit": "annual_probability", "confidence": 0.66, "source": "default-benchmark-set" },
+    { "sector": "Retail", "region": "EU", "metric_name": "mfa_social_engineering_event_rate", "value": 0.05, "unit": "annual_probability", "confidence": 0.66, "source": "default-benchmark-set" },
+    { "sector": "Retail", "region": "EU", "metric_name": "lost_device_event_rate", "value": 0.04, "unit": "annual_probability", "confidence": 0.66, "source": "default-benchmark-set" },
+    { "sector": "Retail", "region": "EU", "metric_name": "infostealer_event_rate", "value": 0.07, "unit": "annual_probability", "confidence": 0.70, "source": "default-benchmark-set" },
+    { "sector": "Retail", "region": "EU", "metric_name": "shadow_it_exposure_event_rate", "value": 0.05, "unit": "annual_probability", "confidence": 0.68, "source": "default-benchmark-set" },
+    { "sector": "Retail", "region": "EU", "metric_name": "shared_admin_abuse_event_rate", "value": 0.06, "unit": "annual_probability", "confidence": 0.70, "source": "default-benchmark-set" }
+  ]
+}
